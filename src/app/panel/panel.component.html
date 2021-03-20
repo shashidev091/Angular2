@@ -1,0 +1,21 @@
+<div class="card card-default">
+  <div class="card-header">
+    <ng-content select=".heading"></ng-content>
+  </div>
+  <div class="card-body">
+    <ng-content select=".body"></ng-content>
+  </div>
+</div>
+<div style="color: green">
+  <ng-content select=".data"></ng-content>
+</div>
+<div class="card" style="width: 18rem;">
+  <img [src]="imgUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+      <ng-content select=".cardTitle"></ng-content>
+    </h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<p>{{ title }}</p>
+<p (click)="onClick()"> {{ newInputs }}</p>
+<app-panel>
+  <div class="heading">Heading</div>
+  <div class="body">
+    <h2>Body</h2>
+    <p>Some {{title}}</p>
+  </div>
+  <div class="data">
+    <h3>Hello</h3>
+  </div>
+  <ng-container class="cardTitle">
+    <h3>This is my WORLD</h3>
+  </ng-container>
+</app-panel>
+
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-primary" (click)="decreaseCourseHandler()">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  <button type="button" class="btn btn-link">Link</button>
+</div>
+<app-login></app-login>
+// ng-template
+<div *ngIf="courses.length > 0; then course else noCourses">
+</div>
+<ng-template #course>
+  List of courses
+  <ul>
+    <li *ngFor="let course of courses; index as idx; even as eve">
+      <p [ngStyle]="{color : ( eve ? 'red' : 'blue')}">{{ idx }} --- {{ course }} </p></li>
+  </ul>
+</ng-template>
+<ng-template #noCourses>
+  <p>No courses yet </p>
+</ng-template>
+<p> {{ msg }} </p>
+
+// ngSwitchCase
+
+<nav class="nav nav-pills">
+  <div class="text-sm-center nav-link" [class.active]="viewMode == 'map'">
+    <a  (click)="viewMode = 'map'" >Active</a>
+  </div>
+  <div class=" text-sm-center nav-link" [class.active]="viewMode == 'list'">
+    <a  (click)="viewMode = 'list'"> Longer nav link</a>
+  </div>
+</nav>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map view content</div>
+  <div *ngSwitchCase="'list'">List view content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
