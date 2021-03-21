@@ -9,13 +9,14 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from 
 export class ReuseableComponent implements OnInit {
   @Input()
   title: string;
-  @Output('change')
-  click = new EventEmitter();
+  @Output('disco')
+  disco = new EventEmitter();
   newInput;
   @Input('test-input')
   newInputs;
   courses = [ 'java', 'python', 'JavaScript', 'Angular', 'React', 'MongoDB', 'MySql'];
   msg: string;
+  // onReusableComponentCLicked
   constructor() { }
   count = 1;
   viewMode = 'map';
@@ -23,7 +24,7 @@ export class ReuseableComponent implements OnInit {
   }
 
   onClick(): void {
-    this.click.emit('text');
+    this.disco.emit('text');
   }
 
   decreaseCourseHandler(): void {
