@@ -12,10 +12,24 @@
         <th scope="col">Id</th>
         <th scope="col">course</th>
       </tr>
-      <tr *ngFor="let item of courses; trackBy: trackCourse">
+      <tr *ngFor="let item of courses; trackBy: trackCourse" class="table-info">
         <td>{{ item.id }}</td>
         <td> {{ item.course }}</td>
       </tr>
     </thead>
   </table>
 </div>
+<div [ngClass]="{
+'alert-success' : isSelected,
+'alert-danger' : !isSelected
+}" role="alert">
+  A simple success alert—check it out!
+</div>
+<button (click)="chnageState()" class="btn btn-primary">change</button>
+
+// Safe traversal operator is done by using optional operators.
+
+<input type="text" appInputFormat [format]="''">
+
+<input type="text" [appInputFormat]="'lowerCase'">
+

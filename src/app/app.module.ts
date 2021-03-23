@@ -10,6 +10,8 @@ import {TitleHighlighterPipe} from './testapp/titleHighlighter.pipe';
 import { ReuseableComponent } from './reuseable/reuseable.component';
 import { PanelComponent } from './panel/panel.component';
 import { LoginComponent } from './login/login.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LoginComponent } from './login/login.component';
     TitleHighlighterPipe,
     ReuseableComponent,
     PanelComponent,
-    LoginComponent
+    LoginComponent,
+    InputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

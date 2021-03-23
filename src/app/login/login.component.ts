@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   courses;
+  isSelected = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -21,5 +22,8 @@ export class LoginComponent implements OnInit {
   }
   trackCourse(index, course): any {
     return course ? course.id : undefined;
+  }
+  chnageState(): void {
+    this.isSelected = !this.isSelected;
   }
 }
