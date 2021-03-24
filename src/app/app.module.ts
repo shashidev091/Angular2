@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {TestComponent} from './testapp/testapp.component';
 import {TestappService} from './testapp/testapp.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SummaryPipe} from './testapp/summary.pipe';
 import {TitleHighlighterPipe} from './testapp/titleHighlighter.pipe';
 import { ReuseableComponent } from './reuseable/reuseable.component';
@@ -12,6 +12,7 @@ import { PanelComponent } from './panel/panel.component';
 import { LoginComponent } from './login/login.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,13 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     PanelComponent,
     LoginComponent,
     InputFormatDirective,
-    ContactFormComponent
+    ContactFormComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [TestappService],
   bootstrap: [AppComponent]
