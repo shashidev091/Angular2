@@ -1,52 +1,55 @@
 <div>
-<!--  <h4>-->
-<!--    Hello {{ title }}-->
-<!--  </h4>-->
-<!--  <ul>-->
-<!--    <li *ngFor="let item of courses">-->
-<!--      <p>{{ item }}</p>-->
-<!--    </li>-->
-<!--  </ul>-->
-<!--  <img [src]="imgUrl" alt="">-->
-<!--  <button (click)="onSave($event)"> save</button>-->
-<!--  <label>-->
-<!--    <input type="text" (keyup.enter)="keyUp($event)">-->
-<!--  </label>-->
-<!--  <label>-->
-<!--    <input type="text" #email (keyup.enter)="onEmailKeyUp(email.value)">-->
-<!--  </label>-->
-<!--  <label for="inputThree">One way </label>-->
-<!--  <input type="text" id="inputThree" [value]="oneWay" (keyup.enter)="oneWayM(oneWay)" >-->
-<!--  <label for="inputFour">TwoWay binding</label>-->
-<!--  <input type="text" id="inputFour" [(ngModel)]="newMail" (keyup.enter)="getNewMail()">-->
-<!--</div>-->
-<!--<div>-->
-<!--  <div class="card" style="width: 18rem;">-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-title">{{newCourse.title | uppercase | lowercase}}</h5>-->
-<!--    <h6 class="card-subtitle mb-2 text-muted">{{newCourse.rating | number: '2.2-2'}}</h6>-->
-<!--    <p class="card-text">{{newCourse.students | number}}</p>-->
-<!--    <p class="card-text">{{newCourse.price | currency:'INR':true:'3.2-2'}}</p>-->
-<!--    <p class="card-text">{{newCourse.releaseDate | date:'mediumDate'}}</p>-->
-<!--  </div>-->
-<!--</div>-->
-<!--  <div>-->
-<!--    {{ oneWay | summary:10}}-->
-<!--  </div>-->
-<!--  <div (click)="toggle()">-->
-<!--    <span *ngIf="!toggleSpan">-->
-<!--      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">-->
-<!--        <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>-->
-<!--      </svg>-->
-<!--    </span>-->
-<!--    <span *ngIf="toggleSpan">-->
-<!--      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">-->
-<!--        <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"/>-->
-<!--        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>-->
-<!--      </svg>-->
-<!--    </span>-->
-<!--  </div>-->
-<!--  {{ oneWay | upperTitle }}-->
+  <h4>
+    Hello {{ title }}
+  </h4>
+  <ul>
+    <li *ngFor="let item of courses">
+      <p>{{ item }}</p>
+    </li>
+  </ul>
+  <img [src]="imgUrl" alt="">
+  <button (click)="onSave($event)"> save</button>
+  <label>
+    <input type="text" (keyup.enter)="keyUp($event)">
+  </label>
+  <label>
+    <input type="text" #email (keyup.enter)="onEmailKeyUp(email.value)">
+  </label>
+  <label for="inputThree">One way </label>
+  <input type="text" id="inputThree" [value]="oneWay" (keyup.enter)="oneWayM(oneWay)" >
+  <label for="inputFour">TwoWay binding</label>
+  <input type="text" id="inputFour" [(ngModel)]="newMail" (keyup.enter)="getNewMail()">
 </div>
-<app-reuseable [title]="oneWay" [test-input]="newMail" (click)="onReusableComponentCLicked($event)"></app-reuseable>
+<div>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{newCourse.title | uppercase | lowercase}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{newCourse.rating | number: '2.2-2'}}</h6>
+    <p class="card-text">{{newCourse.students | number}}</p>
+    <p class="card-text">{{newCourse.price | currency:'INR':true:'3.2-2'}}</p>
+    <p class="card-text">{{newCourse.releaseDate | date:'mediumDate'}}</p>
+  </div>
+</div>
+  <div>
+    {{ oneWay | summary:10}}
+  </div>
+  <div (click)="toggle()">
+    <span *ngIf="!toggleSpan">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+        <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
+      </svg>
+    </span>
+    <span *ngIf="toggleSpan">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">
+        <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"/>
+        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      </svg>
+    </span>
+  </div>
+  {{ oneWay | upperTitle }}
+</div>
+<app-reuseable [title]="oneWay"
+               [test-input]="newMail"
+               (disco)="onReusableComponentCLicked($event)">
+</app-reuseable>
 

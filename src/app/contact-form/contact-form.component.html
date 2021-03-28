@@ -1,0 +1,96 @@
+<!--<form #f="ngForm" (ngSubmit)="submit(f)">-->
+<!--  <div class="form-group" ngModelGroup="contact" #contact="ngModelGroup">-->
+<!--    <label for="firstName">First Name</label>-->
+<!--    <input  ngModel id="firstName"-->
+<!--            type="text"-->
+<!--            class="form-control"-->
+<!--            name="firstName"-->
+<!--            #firstName="ngModel"-->
+<!--            (change)="log(firstName)"-->
+<!--            required>-->
+<!--    <div class="alert alert-danger" *ngIf="firstName.control.dirty && firstName.control.invalid">First name is required</div>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label for="comment">Comment</label>-->
+<!--    <textarea ngModel id="comment" cols="30" rows="10" class="form-control" name="comment"></textarea>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label >-->
+<!--      <input type="checkbox" ngModel name="isSubscribed"> Subscribe to daily mail-->
+<!--    </label>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label for="contactMethod">-->
+<!--      Contact Method-->
+<!--    </label>-->
+<!--    <select ngModel name="contactMethod" id="contactMethod" class="form-control">-->
+<!--&lt;!&ndash;      <option value=""></option>&ndash;&gt;-->
+<!--      <option *ngFor="let methods of contectMethods" [value]="methods.id">{{ methods.name }}</option>-->
+<!--    </select>-->
+<!--    <label for="contactMethodNG">-->
+<!--      Contact Method with ngValue-->
+<!--    </label>-->
+
+<!--    <select multiple ngModel name="contactMethod" id="contactMethodNG" class="form-control">-->
+<!--      <option *ngFor="let methods of contectMethods" [ngValue]="methods.id">{{ methods.name }}</option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--  <div class="radio">-->
+<!--    <label>-->
+<!--      <input ngModel type="radio" name="contactRadio" value="1">-->
+<!--    </label>-->
+<!--  </div>-->
+<!--  <div class="phone">-->
+<!--    <label>-->
+<!--      <input ngModel type="radio" name="phoneRadio" value="1">-->
+<!--    </label>-->
+<!--  </div>-->
+<!--  // dynamically generating-->
+<!--  <div class="radio" *ngFor="let con of contectMethods">-->
+<!--    <label>-->
+<!--      <input ngModel type="radio" name="contacts" [value]="con.id">-->
+<!--      {{con.name}}-->
+<!--    </label>-->
+<!--  </div>-->
+<!--  <button class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+<!--<div>-->
+<!--  {{ f.value | json }}-->
+<!--</div>-->
+
+<div>
+  <form #fo="ngForm" (ngSubmit)="submit(fo)">
+    <div>
+      <label for="courseName">Course</label>
+      <input required minlength="3"
+             type="text"
+             name="courseName"
+             ngModel
+             id="courseName"
+             class="form-control"
+             #inp="ngModel">
+    </div>
+    <div>
+      <div class="alert alert-danger" *ngIf="!fo.pristine && inp.errors?.minlength">
+        <div *ngIf="inp.errors?.minlength">The length of name cannot be less than 3 characters</div>
+      </div>
+    </div>
+    <div>
+      <label for="category">Category</label>
+      <select ngModel name="courseCategory" id="category" class="form-control">
+        <option *ngFor="let con of contactMethods" [value]="con.id">{{con.name}}</option>
+      </select>
+    </div>
+    <div class="custom-radio">
+      <label>
+        <input ngModel name="hasMoneyBackGuarantee" type="radio" value="2">
+      </label>
+    </div>
+    <div class="p-1">
+      <button class="btn btn-success" [disabled]="fo.invalid">submit</button>
+    </div>
+  </form>
+</div>
+<div>
+  {{fo.value | json}}
+</div>
