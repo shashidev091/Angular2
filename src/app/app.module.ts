@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { NewCourseComponent } from './new-course/new-course.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     LoginComponent,
     InputFormatDirective,
     ContactFormComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    NewCourseComponent
   ],
   imports: [
     BrowserModule,
