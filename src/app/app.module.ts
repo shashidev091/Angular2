@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {TestComponent} from './testapp/testapp.component';
-import {TestappService} from './testapp/testapp.service';
+import {TestAppService} from './testapp/test-app.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SummaryPipe} from './testapp/summary.pipe';
 import {TitleHighlighterPipe} from './testapp/titleHighlighter.pipe';
@@ -38,7 +38,7 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [TestappService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
