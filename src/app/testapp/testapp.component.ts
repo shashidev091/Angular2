@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TestappService} from './testapp.service';
+import {TestAppService} from './test-app.service';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class TestComponent {
     releaseDate: new Date(2017, 4, 3)
   };
   toggleSpan = false;
-  constructor(private service: TestappService) {
+  constructor(private service: TestAppService) {
     this.courses = service.getCourses();
     this.imgUrl = 'https://images.unsplash.com/photo-1615971367805-b02c6f5c4aaa?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
   }

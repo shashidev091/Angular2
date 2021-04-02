@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {TestComponent} from './testapp/testapp.component';
-import {TestappService} from './testapp/testapp.service';
+import {TestAppService} from './testapp/test-app.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SummaryPipe} from './testapp/summary.pipe';
 import {TitleHighlighterPipe} from './testapp/titleHighlighter.pipe';
@@ -16,6 +16,10 @@ import {ReactiveFormsComponent} from './reactive-forms/reactive-forms.component'
 import {NewCourseComponent} from './new-course/new-course.component';
 import {PostsComponent} from './posts/posts.component';
 import {HttpClientModule} from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,15 +34,35 @@ import {HttpClientModule} from '@angular/common/http';
     ContactFormComponent,
     ReactiveFormsComponent,
     NewCourseComponent,
-    PostsComponent
+    PostsComponent,
+    NavbarComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '',
+        component: HomeComponent
+      },
+      { path: 'posts',
+        component: PostsComponent
+      },
+      { path: 'forms/:username/:password',
+        component: ReactiveFormsComponent
+      },
+      { path: 'contact',
+        component: ContactFormComponent
+      },
+      { path: '**',
+        component: NotFoundComponent
+      }
+    ])
   ],
-  providers: [TestappService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
