@@ -20,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {RouterModule} from '@angular/router';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {RouterModule} from '@angular/router';
     PostsComponent,
     NavbarComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,10 @@ import {RouterModule} from '@angular/router';
       },
       { path: 'contact',
         component: ContactFormComponent
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent
       },
       { path: '**',
         component: NotFoundComponent
